@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 350 20% 98%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 350 20% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 350 20% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 351 100% 34%;
+    --primary-foreground: 355 100% 98%;
+    --secondary: 350 20% 94%;
+    --secondary-foreground: 351 80% 25%;
+    --muted: 350 20% 96%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 350 30% 91%;
+    --accent-foreground: 351 80% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 350 20% 90%;
+    --input: 350 20% 92%;
+    --ring: 351 100% 34%;
+    --chart-1: 221 83% 53%;
+    --chart-2: 160 84% 39%;
+    --chart-3: 45 93% 47%;
+    --chart-4: 348 83% 60%;
+    --chart-5: 25 84% 50%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 350 10% 5%;
+    --foreground: 210 20% 98%;
+    --card: 350 10% 8%;
+    --card-foreground: 210 20% 98%;
+    --popover: 350 10% 8%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 351 90% 55%;
+    --primary-foreground: 351 90% 10%;
+    --secondary: 350 10% 15%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 350 10% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 350 10% 17%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 350 10% 17%;
+    --input: 350 10% 17%;
+    --ring: 351 90% 55%;
+    --chart-1: 218 81% 60%;
+    --chart-2: 160 74% 49%;
+    --chart-3: 46 93% 57%;
+    --chart-4: 348 81% 70%;
+    --chart-5: 26 94% 60%;
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+    .endless-blink {
+        animation: blink 1.2s ease-in-out infinite;
+    }
+}
