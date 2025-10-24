@@ -1,16 +1,17 @@
 # Build stage
-FROM oven/bun:latest AS builder
+FROM --platform=linux/arm64 oven/bun:latest AS builder
 
 WORKDIR /app
 
-COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile
+COPY package.json ./
+COPY bun.lock* ./
+RUN bun install
 
 COPY . .
 RUN bun run build
 
 # Production stage
-FROM oven/bun:latest
+FROM --platform=linux/arm64 oven/bun:latest
 
 WORKDIR /app
 
