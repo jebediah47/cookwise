@@ -1,5 +1,5 @@
 # Build stage
-FROM --platform=linux/arm64 oven/bun:latest AS builder
+FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 RUN bun run build
 
 # Production stage
-FROM --platform=linux/arm64 oven/bun:latest
+FROM oven/bun:latest
 
 WORKDIR /app
 
