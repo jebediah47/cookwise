@@ -3,7 +3,7 @@ import { SignUp } from "@clerk/nextjs";
 export default function Page() {
   return (
     <div className="flex justify-center items-center h-screen bg-muted/40">
-      <SignUp />
+      <SignUp forceRedirectUrl="/app" />
     </div>
   );
 }
